@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2021/03/11 20:29:34.000.508,=C:\Users\barba\OneDrive\Documentos\GitHub\CGI\Unit1.cpp</Transaction>
+    <Transaction>2021/03/11 20:29:34.000.401,=C:\Users\barba\OneDrive\Documentos\GitHub\CGI\Project1PCH1.h</Transaction>
+    <Transaction>2021/03/11 20:31:35.000.936,C:\Users\barba\OneDrive\Documentos\GitHub\CGI\Unit1.cpp=C:\Users\barba\OneDrive\Documentos\GitHub\CGI\Testes\Unit1.cpp</Transaction>
+    <Transaction>2021/03/11 20:31:35.000.936,C:\Users\barba\OneDrive\Documentos\GitHub\CGI\Unit1.h=C:\Users\barba\OneDrive\Documentos\GitHub\CGI\Testes\Unit1.h</Transaction>
+    <Transaction>2021/03/11 20:31:35.000.936,C:\Users\barba\OneDrive\Documentos\GitHub\CGI\Unit1.dfm=C:\Users\barba\OneDrive\Documentos\GitHub\CGI\Testes\Unit1.dfm</Transaction>
+    <Transaction>2021/03/11 20:31:48.000.855,C:\Users\barba\OneDrive\Documentos\GitHub\CGI\Project1PCH1.h=C:\Users\barba\OneDrive\Documentos\GitHub\CGI\Testes\Project1PCH1.h</Transaction>
+    <Transaction>2021/03/11 20:31:53.000.315,C:\Users\barba\OneDrive\Documentos\GitHub\CGI\Project1.cbproj=C:\Users\barba\OneDrive\Documentos\GitHub\CGI\Testes\Project1.cbproj</Transaction>
+    <Transaction>2021/03/11 20:38:17.000.702,=C:\Users\barba\OneDrive\Documentos\GitHub\CGI\Testes\Unit2.cpp</Transaction>
+    <Transaction>2021/03/11 20:38:25.000.298,C:\Users\barba\OneDrive\Documentos\GitHub\CGI\Testes\Unit2.h=C:\Users\barba\OneDrive\Documentos\GitHub\CGI\Testes\uPonto.h</Transaction>
+    <Transaction>2021/03/11 20:38:25.000.298,C:\Users\barba\OneDrive\Documentos\GitHub\CGI\Testes\Unit2.cpp=C:\Users\barba\OneDrive\Documentos\GitHub\CGI\Testes\uPonto.cpp</Transaction>
+    <Transaction>2021/03/11 20:39:07.000.252,=C:\Users\barba\OneDrive\Documentos\GitHub\CGI\Testes\Unit2.cpp</Transaction>
+    <Transaction>2021/03/11 20:39:16.000.116,C:\Users\barba\OneDrive\Documentos\GitHub\CGI\Testes\Unit2.cpp=C:\Users\barba\OneDrive\Documentos\GitHub\CGI\Testes\uJanela.cpp</Transaction>
+    <Transaction>2021/03/11 20:39:16.000.116,C:\Users\barba\OneDrive\Documentos\GitHub\CGI\Testes\Unit2.h=C:\Users\barba\OneDrive\Documentos\GitHub\CGI\Testes\uJanela.h</Transaction>
+    <Transaction>2021/03/11 20:39:57.000.511,=C:\Users\barba\OneDrive\Documentos\GitHub\CGI\Testes\Unit2.cpp</Transaction>
+    <Transaction>2021/03/11 20:40:03.000.450,C:\Users\barba\OneDrive\Documentos\GitHub\CGI\Testes\Unit2.cpp=C:\Users\barba\OneDrive\Documentos\GitHub\CGI\Testes\uDisplay.cpp</Transaction>
+    <Transaction>2021/03/11 20:40:03.000.450,C:\Users\barba\OneDrive\Documentos\GitHub\CGI\Testes\Unit2.h=C:\Users\barba\OneDrive\Documentos\GitHub\CGI\Testes\uDisplay.h</Transaction>
+    <Transaction>2021/03/11 20:42:37.000.370,=C:\Users\barba\OneDrive\Documentos\GitHub\CGI\Testes\Unit2.cpp</Transaction>
+    <Transaction>2021/03/11 20:42:42.000.524,C:\Users\barba\OneDrive\Documentos\GitHub\CGI\Testes\Unit2.cpp=C:\Users\barba\OneDrive\Documentos\GitHub\CGI\Testes\uPoligono.cpp</Transaction>
+    <Transaction>2021/03/11 20:42:42.000.524,C:\Users\barba\OneDrive\Documentos\GitHub\CGI\Testes\Unit2.h=C:\Users\barba\OneDrive\Documentos\GitHub\CGI\Testes\uPoligono.h</Transaction>
+    <Transaction>2021/04/12 14:17:15.000.914,=C:\Users\barba\OneDrive\Documentos\GitHub\CGI\Projeto\Unit2.cpp</Transaction>
+    <Transaction>2021/04/12 14:17:24.000.671,C:\Users\barba\OneDrive\Documentos\GitHub\CGI\Projeto\Unit2.cpp=C:\Users\barba\OneDrive\Documentos\GitHub\CGI\Projeto\Ponto3D.cpp</Transaction>
+    <Transaction>2021/04/12 14:17:24.000.671,C:\Users\barba\OneDrive\Documentos\GitHub\CGI\Projeto\Unit2.h=C:\Users\barba\OneDrive\Documentos\GitHub\CGI\Projeto\Ponto3D.h</Transaction>
+  </Transactions>
+</BorlandProject>

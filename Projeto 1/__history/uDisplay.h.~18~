@@ -1,0 +1,26 @@
+//---------------------------------------------------------------------------
+
+#ifndef uDisplayH
+#define uDisplayH
+#include "uPoligono.h"
+#include "uJanela.h"
+#include <vector>
+#include <Vcl.ExtCtrls.hpp>
+#include <Vcl.StdCtrls.hpp>
+#include <vcl.h>
+
+//---------------------------------------------------------------------------
+class DisplayFile {
+		public:
+		std::vector <Poligono> poligonos;
+
+		void desenha(TCanvas *canvas, Janela mundo, Janela vp, int tipoReta);
+
+		void mostra(TListBox *listBox);
+
+		void mostraPontos(int qualPoligono, TListBox *listBox);
+
+		void clipping(Janela clipping, int *Id);
+
+};
+#endif
