@@ -176,6 +176,7 @@ void Mao::desenha(){
     glPushMatrix();
     glTranslatef(0.0, 6.0 * grossura, 0.0);
     glPushMatrix();
+
     glTranslatef(-3 * grossura, 0.0, 0.0);
     glutSolidSphere(grossura, 8, 8);
    glRotatef(curvatura[0] * 0.9, 1.0, 0.0, 0.0);
@@ -184,6 +185,7 @@ void Mao::desenha(){
 
     glPopMatrix();
     glPushMatrix();
+
     glTranslatef(-1.5 * grossura, 0.0, 0.0);
     glutSolidSphere(grossura, 8, 8);
     glRotatef(curvatura[1] * 0.9, 1.0, 0.0, 0.0);

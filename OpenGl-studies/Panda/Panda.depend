@@ -1,9 +1,10 @@
 # depslib dependency file v1.0
-1619976374 source:c:\users\barba\onedrive\documentos\github\cgi\opengl\mão\mão\main.cpp
+1621394571 source:c:\users\barba\documents\computer-graphics-studies\computer-graphics-studies-\opengl-studies\panda\main.cpp
 	<stdio.h>
 	<stdlib.h>
 	<GL/gl.h>
 	<GL/glut.h>
+	<windows.h>
 
 1341006776 c:\program files (x86)\codeblocks\mingw\include\stdio.h
 	<_mingw.h>
@@ -20,6 +21,8 @@
 1341006776 c:\program files (x86)\codeblocks\mingw\include\stdlib.h
 	<_mingw.h>
 	<stddef.h>
+
+1301111164 c:\program files (x86)\codeblocks\mingw\include\gl\gl.h
 
 976674172 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
 	<windows.h>
@@ -224,15 +227,7 @@
 1301111156 c:\program files (x86)\codeblocks\mingw\include\oleidl.h
 	<objfwd.h>
 
-1301111164 c:\program files (x86)\codeblocks\mingw\include\gl\gl.h
-
 1301111164 c:\program files (x86)\codeblocks\mingw\include\gl\glu.h
 	<stddef.h>
 	<GL/gl.h>
-
-1619976374 source:c:\users\barba\documents\computer-graphics-studies\computer-graphics-studies-\opengl-studies\mão\mão\main.cpp
-	<stdio.h>
-	<stdlib.h>
-	<GL/gl.h>
-	<GL/glut.h>
 
