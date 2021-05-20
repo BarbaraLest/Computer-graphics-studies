@@ -3,6 +3,7 @@
 #include <GL/gl.h>
 #include <GL/glut.h>
 #include <windows.h>
+#include "SOIL.h"
 //#include <gl\glaux.h>
 //#include "utilTextura.cpp"
 
@@ -10,7 +11,35 @@ float ang = 0;
 float ang2 = 0;
 float ang3 = 0;
 
+GLuint texture[3];
+
+int LoadGLTextures(){
+    /* load an image file directly as a new OpenGL texture */
+     texture[0]= SOIL_load_OGL_texture("D:\\Imagens\\img_test.bmp",
+        SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID,SOIL_FLAG_INVERT_Y);
+
+
+  if(texture[0] == 0  || texture[1] == 0  || texture[2] == 0){
+        return false;
+    }
+    // Typical Texture Generation Using Data From The Bitmap
+    glBindTexture(GL_TEXTURE_2D, texture[0]);
+    glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
+
+    glEnable(GL_TEXTURE_2D);                // Enable Texture Mapping ( NEW )
+    glShadeModel(GL_SMOOTH);                // Enable Smooth Shading
+    glClearColor(0.0f, 0.0f, 0.0f, 0.0f);   // Black Background
+    glClearDepth(1.0f);                        // Depth Buffer Setup
+    glEnable(GL_DEPTH_TEST);                // Enables Depth Testing
+    glDepthFunc(GL_LEQUAL);                    // The Type Of Depth Testing To Do
+    glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);    // Really Nice Perspective Calculations
+
+    return true; // Return Success
+}
+
 void display();
+
 
 class Osso
 {
@@ -98,7 +127,7 @@ void Braco::setCurvatura(float curvatura, bool reto, int tipo)
         }
         else if (tipo == 2)
         {
-            a.setAngulo(90);
+            a.setAngulo(-10);
         }
     }
 }
@@ -160,8 +189,10 @@ public:
     float getCurvatura(int dedo) { return curvatura[dedo]; }
     void home();
     void deita();
-    void rola();
     void anda();
+    void corre();
+    void equilibra();
+    void luta();
 
 protected:
     float grossura;
@@ -190,7 +221,6 @@ Panda::Panda(float gros)
 
 void Panda::desenha()
 {
-
     glPushMatrix();
     //1-  , 2-altura,
     glTranslatef(0, 8.0 * grossura, 0.0);
@@ -210,7 +240,11 @@ void Panda::desenha()
 
     //cabeça
     glTranslatef(-1 * grossura, 0.0, 0.0);
+    glEnable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, texture[0]);
+    glTexCoord2f(1.0f, 0.0f);
     glutSolidSphere(4 * grossura, 8, 8);
+    glDisable(GL_TEXTURE_2D);
 
     glPopMatrix();
     glPushMatrix();
@@ -230,7 +264,6 @@ void Panda::desenha()
     glPushMatrix();
 
     //rabinho
-
     glTranslatef(-1, -8 * grossura, -2);
     glutSolidSphere(0.75 * grossura, 8, 8);
 
@@ -275,8 +308,27 @@ void Panda::desenha()
     glPushMatrix();
     glTranslatef(-0.75 * grossura, 3.0 * grossura, 0.0);
     glScalef(4.5 * grossura, 6.0 * grossura, 4 * grossura);
-    glutSolidSphere(0.75 * grossura, 30, 10);
+
+    glEnable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, texture[0]);
+    GLUquadricObj* q = gluNewQuadric();
+    gluQuadricTexture(q, true);
+    glTexCoord2f(0.0f, 0.0f);
+    gluSphere(q, 0.75 * grossura, 30, 10);
     glPopMatrix();
+    glDisable(GL_TEXTURE_2D);
+
+
+
+  //  glEnable(GL_TEXTURE_GEN_S);
+   // glEnable(GL_TEXTURE_GEN_T);
+   // glBindTexture(GL_TEXTURE_GEN_T, texture[0]);
+  //  glTexCoord2f(1.0f, 0.0f);
+  //  glutSolidSphere( 0.75 * grossura, 30, 10);
+  //  glDisable(GL_TEXTURE_GEN_T);
+  //  glDisable(GL_TEXTURE_GEN_S);
+
+   // glPopMatrix();
 }
 
 void Panda::setCurvatura(int membro, float curv, bool reto, int tipo)
@@ -332,6 +384,11 @@ void Panda::home()
     }
     ang3 = 0;
     display();
+    setCurvatura(2, 0, false, 0);
+    setCurvatura(3, 0, false, 0);
+    setCurvatura(0, 0, false, 0);
+    setCurvatura(1, 0, false, 0);
+    display();
 }
 
 void Panda::deita()
@@ -349,22 +406,8 @@ void Panda::deita()
     display();
 }
 
-void Panda::rola()
-{
 
-    deita();
-
-    for (int i = 0; i < 10; i++)
-    {
-        ang += 20;
-        ang2 += 20;
-        ang3 += 20;
-        display();
-    }
-}
-
-void Panda::anda()
-{
+void Panda::corre(){
     ang += 50;
     for (int k = 0; k < 5; k++)
     {
@@ -398,6 +441,102 @@ void Panda::anda()
     display();
 }
 
+void Panda::anda(){
+
+ ang += 50;
+    for (int k = 0; k < 10; k++)
+    {
+        for (int j = 0; j < 2; j++)
+        {
+            setCurvatura(2, getCurvatura(2) - 5, false, 0);
+            setCurvatura(3, getCurvatura(3) + 5, false, 0);
+            ang2 = 2;
+            display();
+            Sleep(100);
+        }
+
+        for (int j = 0; j < 2; j++)
+        {
+            setCurvatura(2, getCurvatura(2) + 5, false, 0);
+            setCurvatura(3, getCurvatura(3) - 5, false, 0);
+            ang2 = 0;
+            display();
+            Sleep(100);
+        }
+    }
+
+    setCurvatura(2, 0, false, 0);
+    setCurvatura(3, 0, false, 0);
+    setCurvatura(0, 0, false, 0);
+    setCurvatura(1, 0, false, 0);
+    display();
+
+}
+
+void Panda::equilibra(){
+
+ home();
+ display();
+
+
+ setCurvatura(2, -85, false, 0);
+ display();
+
+ for(int i=0; i<6; i++){
+
+    ang3 = 2;
+    display();
+    Sleep(200);
+
+    ang2 = 2;
+    display();
+    Sleep(200);
+
+    ang3 = -2;
+    display();
+    Sleep(200);
+
+    ang2 = -2;
+    display();
+    Sleep(200);
+
+ }
+
+ }
+
+void Panda::luta(){
+home();
+display();
+
+setCurvatura(3, -10 , false, 0);
+setCurvatura(2, 10 , false, 0);
+setCurvatura(0, 70 , false, 0);
+setCurvatura(1, 100 , false, 0);
+display();
+Sleep(30);
+
+//setCurvatura(0, getCurvatura(0) , false, 2);
+//setCurvatura(1, getCurvatura(0) , false, 2);
+//display();
+
+
+    setCurvatura(0, getCurvatura(0) , false, 1);
+     setCurvatura(0, getCurvatura(0) , false, 2);
+    display();
+    Sleep(200);
+    setCurvatura(0, 100, false, 0);
+    display();
+
+    setCurvatura(1, getCurvatura(0) , false, 2);
+    display();
+    Sleep(200);
+    setCurvatura(1, 100, false, 0);
+    display();
+
+
+
+}
+
 /////////////////////////////////////////////////////////////
 Panda p(1.0);
 
@@ -410,6 +549,26 @@ void init(void)
     glDepthFunc(GL_LEQUAL);  // The Type Of Depth Test To Do
     glEnable(GL_DEPTH_TEST); // Enables Depth Testing
     glShadeModel(GL_SMOOTH); // Enables Smooth Color Shading
+}
+
+void displaychao() {
+
+    glColor3f(1.0, 1.0, 1.0);
+//    glTranslatef(dx, 1.0, 0.0); // A cada passada do cavalo movimenta
+   // glEnable(GL_TEXTURE_2D);
+   // glBindTexture (GL_TEXTURE_2D, texture[0]);
+    glPushMatrix();
+        glBegin(GL_QUADS);
+            glTexCoord2f(0.0f, 0.0f);glVertex3f(-250.0, -31.0, -100.0);
+            glTexCoord2f(1.0f, 0.0f);glVertex3f(-250.0, -31.0, 100.0);
+            glTexCoord2f(1.0f, 1.0f);glVertex3f(250.0, -31.0, 100.0);
+            glTexCoord2f(0.0f, 1.0f);glVertex3f(250.0, -31.0, -100.0);
+        glEnd();
+   // glDisable(GL_TEXTURE_2D);
+    glPopMatrix();
+
+    return;
+
 }
 
 void display(void)
@@ -441,9 +600,12 @@ void display(void)
     glRotatef(ang2, 1.0, 0.0, 0.0);
     glColor3f(1.0, 0.8, 0);
 
-    p.desenha();
 
+    p.desenha();
     glPopMatrix();
+    //glPushMatrix();
+    //displaychao();
+    //glPopMatrix();
 
     glutSwapBuffers();
 }
@@ -540,12 +702,20 @@ void keyboard(unsigned char key, int x, int y)
         p.deita();
         break;
 
-    case 'k':
-        p.rola();
+    case 'm':
+        p.corre();
         break;
 
-    case 'm':
+    case 'n':
         p.anda();
+        break;
+
+    case 'b':
+        p.equilibra();
+        break;
+
+    case 'v':
+        p.luta();
         break;
 
     default:
@@ -568,5 +738,10 @@ int main(int argc, char **argv)
     glutReshapeFunc(reshape);
     glutKeyboardFunc(keyboard);
     glutMainLoop();
+
+    if (!LoadGLTextures()) {
+        return 1;
+    }
+
     return 0;
 }
