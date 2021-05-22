@@ -1,0 +1,15 @@
+Lista de comandos para os movimentos:
+q - abrir braço esquerdo
+a - fechar braço esquerdo
+w - abrir braço direito
+s - fechar braço direito
+e - mexer perna esquerda para frente
+d - mexer perna esquerda para trás
+r - mexer perna direita para frente
+f - mexer perna direita para trás
+h - home
+m - corre
+n - anda
+b - equilibra
+v - luta
+"[", "]", "," , "." - rotação dos angulos

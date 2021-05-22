@@ -42,18 +42,6 @@
 			<Add library="gdi32" />
 			<Add directory="C:/Program Files (x86)/CodeBlocks/MinGW/lib" />
 		</Linker>
-		<Unit filename="SOIL.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="SOIL.h" />
-		<Unit filename="image_DXT.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="image_DXT.h" />
-		<Unit filename="image_helper.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="image_helper.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="soil/Simple OpenGL Image Library/src/SOIL.c">
 			<Option compilerVar="CC" />
@@ -73,17 +61,10 @@
 		<Unit filename="soil/Simple OpenGL Image Library/src/stb_image_aug.h" />
 		<Unit filename="soil/Simple OpenGL Image Library/src/stbi_DDS_aug.h" />
 		<Unit filename="soil/Simple OpenGL Image Library/src/stbi_DDS_aug_c.h" />
-		<Unit filename="stb_image_aug.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="stb_image_aug.h" />
-		<Unit filename="stbi_DDS_aug.h" />
-		<Unit filename="stbi_DDS_aug_c.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
 			<debugger />
-			<lib_finder disable_auto="1" />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>
